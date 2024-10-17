@@ -1,3 +1,4 @@
+// Selecting elements from the DOM
 let signUpBtn = document.querySelector('.signupbtn');
 let signInBtn = document.querySelector('.signinbtn');
 let nameField = document.querySelector('.namefield');
@@ -5,19 +6,22 @@ let title = document.querySelector('.title');
 let underline = document.querySelector('.underline');
 let text = document.querySelector('.text');
 
-signInBtn.addEventListener('click',()=>{
-    nameField.style.maxHeight = '0';
-    title.innerHTML = 'Sign In';
-    text.innerHTML = 'Forget Password';
-    signUpBtn.classList.add('disable');
-    signInBtn.classList.remove('disable');
-    underline.style.transform = 'translateX(35px)';
+// Event listener for Sign In button
+signInBtn.addEventListener('click', () => {
+    nameField.style.maxHeight = '0'; // Hide the name field
+    title.innerHTML = 'Sign In'; // Change title to Sign In
+    text.innerHTML = 'Forgot Password'; // Change text to Forgot Password
+    signUpBtn.classList.add('disable'); // Disable the Sign Up button
+    signInBtn.classList.remove('disable'); // Enable the Sign In button
+    underline.style.transform = 'translateX(100px)'; // Move the underline to align with Sign In
 });
-signUpBtn.addEventListener('click',()=>{
-    nameField.style.maxHeight = '60px';
-    title.innerHTML = 'Sign Up';
-    text.innerHTML = 'Password Suggestion';
-    signUpBtn.classList.remove('disable');
-    signInBtn.classList.add('disable');
-    underline.style.transform = 'translateX(0)';
+
+// Event listener for Sign Up button
+signUpBtn.addEventListener('click', () => {
+    nameField.style.maxHeight = '60px'; // Show the name field
+    title.innerHTML = 'Sign Up'; // Change title to Sign Up
+    text.innerHTML = 'Password Suggestion'; // Change text to Password Suggestion
+    signUpBtn.classList.remove('disable'); // Enable the Sign Up button
+    signInBtn.classList.add('disable'); // Disable the Sign In button
+    underline.style.transform = 'translateX(0)'; // Move the underline back to Sign Up
 });
