@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>web project</title>
+    <title>Web Project - Sign Up / Sign In</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script type="module" src="auth.js"></script>
 </head>
 <body>
+    <!-- Container for the Sign Up / Sign In Form -->
     <div class="container">
-    <div class="form-box">
-    <h1 class="title">Sign up</h1>
-    <div class="underline"></div>
-    <form>
-        <div class="input-group">
+        <div class="form-box">
+            <h1 class="title">Sign up</h1>
+            <div class="underline"></div>
+            <form>
+                <div class="input-group">
+                    <div class="input-field namefield">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="Name" placeholder="Name" required>
+                    </div><!-- end input field -->
 
-            <div class="input-field namefield">
-            <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="name">
-            </div><!--end input field-->
+                    <div class="input-field">
+                        <i class="fa-solid fa-at"></i>
+                        <input type="email" id="Email" placeholder="Email" required>
+                    </div><!-- end input field -->
 
-            <div class="input-field">
-            <i class="fa-solid fa-at"></i>
-            <input type="email" placeholder="email">
-            </div><!--end input field-->
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="Password" placeholder="Password" required>
+                    </div><!-- end input field -->
 
-            <div class="input-field">
-            <i class="fa-solid fa-key"></i>
-            <input type="password"placeholder="password">
-            </div><!--end input field-->
-            <p><span class="text">Password Suggestions </span><a href="#"> Click Here!</a></p>
+                    <p><span class="text">Password Suggestions </span><a href="#"> Click Here!</a></p>
+                </div><!-- end input group -->
 
-        </div><!--end input group-->
+                <div class="btn-field">
+                    <button type="button" id="SubmitSignUp" class="signupbtn">Sign Up</button>
+                    <button type="button" class="disable signinbtn">Sign In</button>
+                </div><!-- end btn field -->
+            </form>
+        </div><!-- end form-box -->
+    </div><!-- end container -->
 
-        <div class="btn-field">
-            <button type="button" class="signupbtn" >Sign Up</button>
-            <button type="button" class="disable signinbtn">Sign In</button>
+    <!-- Message Display Container for Notifications -->
+    <div id="SignUpMessage" class="message" style="display: none;"></div>
 
-        </div><!--end btn field-->
-        
-    </form>
-    </div><!--end form-box-->
-    </div><!--end container-->
-    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
