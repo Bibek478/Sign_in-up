@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register & Login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="container">
-        <div class="form-box">
-            <h1 class="title">Sign Up</h1>
-            <form id="form">
-                <div class="input-group">
-                    <div class="input-field namefield">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" id="Name" placeholder="Name" required>
-                    </div><!--end input field-->
+      <div class="form-box">
+        <h1 class="title">Sign Up</h1>
+        <form id="form">
+          <div class="input-group">
+            <div class="input-field namefield">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" id="Name" placeholder="Name" required />
+            </div>
+            <!--end input field-->
 
-                    <div class="input-field">
-                        <i class="fa-solid fa-at"></i>
-                        <input type="email" id="rEmail" placeholder="Email" required>
-                    </div><!--end input field-->
+            <div class="input-field">
+              <i class="fa-solid fa-at"></i>
+              <input type="email" id="rEmail" placeholder="Email" required />
+            </div>
+            <!--end input field-->
 
-                    <div class="input-field">
-                        <i class="fa-solid fa-key"></i>
-                        <input type="password" id="rPassword" placeholder="Password" required>
-                    </div><!--end input field-->
-                    <div id="forgotPassword" style="display: none;">
-                        <a href="#" id="reset">Forgot Password?</a>
-                    </div>
-                </div><!--end input group-->
+            <div class="input-field">
+              <i class="fa-solid fa-key"></i>
+              <input
+                type="password"
+                id="rPassword"
+                placeholder="Password"
+                required
+              />
+            </div>
+            <!--end input field-->
+            <div id="forgotPassword" style="display: none">
+              <a href="#" id="reset">Forgot Password?</a>
+            </div>
+          </div>
+          <!--end input group-->
 
-                <div class="btn-field">
-                    <button type="button" class="signupbtn" id="submitSignUp">Sign Up</button>
-                    <button type="button" class="disable signinbtn" id="submitSignIn">Sign In</button>
-                </div><!--end btn field-->
-            </form>
-            <div id="signUpMessage" style="display: none;"></div>
-            <div id="signInMessage" style="display: none;"></div>
-        </div><!--end form-box-->
-    </div><!--end container-->
+          <div class="btn-field">
+            <button type="button" class="signupbtn" id="submitSignUp">
+              Sign Up
+            </button>
+            <button type="button" class="disable signinbtn" id="submitSignIn">
+              Sign In
+            </button>
+          </div>
+          <!--end btn field-->
+        </form>
+        <p>---or---</p>
+        <!-- Google Sign-In Button -->
+        <div class="google-signin">
+          <button type="button" id="googleSignIn" class="google-btn">
+            <i class="fab fa-google"></i> Sign in with Google
+          </button>
+        </div>
+        <div id="signUpMessage" style="display: none"></div>
+        <div id="signInMessage" style="display: none"></div>
+      </div>
+      <!--end form-box-->
+    </div>
+    <!--end container-->
     <script type="module" src="firebaseauth.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

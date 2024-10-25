@@ -69,3 +69,25 @@ button.disable {
     background: #eaeaea;
     color: #555;
 }
+.google-signin {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.google-btn {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.google-btn i {
+    font-size: 1.2rem;
+}
