@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -81,6 +81,23 @@ signIn.addEventListener('click', (event) => {
             if (errorCode === 'auth/invalid-credential') {
                 showMessage('Incorrect Email or Password', 'signInMessage');
             } else {
+                showMessage('Account does not exist', 'signInMessage');
+            }
+        });
+});
+const reset = document.getElementById('reset');
+reset.addEventListener("click", function(event){
+    event.preventDefault();
+    const email = document.getElementById('rEmail').value;
+    sendPasswordResetEmail(auth, email)
+        .then(() => {
+            showMessage('Password Reset Email Sent', 'signInMessage');
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            if (errorCode === 'auth/invalid-email') {
+                showMessage('Invalid Email', 'signInMessage');
+            } else if (errorCode === 'auth/user-not-found') {
                 showMessage('Account does not exist', 'signInMessage');
             }
         });
