@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, sendPasswordResetEmail, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -36,6 +36,10 @@ signUp.addEventListener('click', (event) => {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+            sendEmailVerification(auth.currentUser)
+            .then(()=>{
+                alert("Email verification sent. Please check your inbox.");
+            });
             const user = userCredential.user;
             const userData = {
                 email: email,
@@ -44,6 +48,7 @@ signUp.addEventListener('click', (event) => {
             showMessage('Account Created Successfully', 'signUpMessage');
 
             const docRef = doc(db, "users", user.uid);
+            // await sendEmailVerfication(userCredential.user);
             return setDoc(docRef, userData);
         })
         .then(() => {
@@ -66,13 +71,22 @@ signUp.addEventListener('click', (event) => {
 const signIn = document.getElementById('submitSignIn');
 signIn.addEventListener('click', (event) => {
     event.preventDefault();
-    const email = document.getElementById('rEmail').value; // Changed to match the input ID
-    const password = document.getElementById('rPassword').value; // Changed to match the input ID
+    const email = document.getElementById('rEmail').value;
+    const password = document.getElementById('rPassword').value;
 
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            showMessage('Login is successful', 'signInMessage');
             const user = userCredential.user;
+
+            // Check if the email is verified
+            if (!user.emailVerified) {
+                showMessage('Please verify your email before logging in.', 'signInMessage');
+                auth.signOut(); // Sign the user out immediately to prevent access
+                return;
+            }
+
+            // If verified, proceed with login
+            showMessage('Login is successful', 'signInMessage');
             localStorage.setItem('loggedInUserId', user.uid);
             window.location.href = 'homepage.html';
         })
@@ -85,6 +99,7 @@ signIn.addEventListener('click', (event) => {
             }
         });
 });
+
 const reset = document.getElementById('reset');
 reset.addEventListener("click", function(event){
     event.preventDefault();
