@@ -41,8 +41,17 @@
                 required
               />
             </div>
+            <div class="input-field">
+              <i class="fa-solid fa-key"></i>
+              <input
+                type="confirm password"
+                id="rPassword"
+                placeholder="Confirm Password"
+                required
+              />
+            </div>
             <!--end input field-->
-            <div id="forgotPassword" style="display: none">
+            <div class="forgotPassword" id="forgotPassword" style="display: none">
               <a href="#" id="reset">Forgot Password?</a>
             </div>
           </div>
@@ -58,7 +67,9 @@
           </div>
           <!--end btn field-->
         </form>
-        <p>---or---</p>
+        <div class="sep">
+          <p>---or---</p>
+        </div>
         <!-- Google Sign-In Button -->
         <div class="google-signin">
           <button type="button" id="googleSignIn" class="google-btn">

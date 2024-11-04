@@ -7,6 +7,7 @@
 .container {
     width: 100%;
     height: 100vh;
+    background-color: #98b4c1;
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('nature.jpg');
     background-position: center;
     background-size: cover;
@@ -26,7 +27,7 @@
 }
 .form-box h1 {
     font-size: 30px;
-    color: orangered;
+    color: rgb(113, 108, 178);
 }
 .input-field {
     background: #eaeaea;
@@ -56,7 +57,7 @@
 }
 .btn-field button {
    flex-basis: 48%;
-   background: orangered;
+   background: rgb(113, 108, 178);
    color: white;
    height: 40px;
    border-radius: 20px;
@@ -90,4 +91,13 @@ button.disable {
 
 .google-btn i {
     font-size: 1.2rem;
+}
+.sep{
+
+}
+.forgotPassword {
+    display: none;
+    text-align: left;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
 }
