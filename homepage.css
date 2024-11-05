@@ -1,0 +1,76 @@
+/* homepage.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: linear-gradient(to right, #f8a074, #f26f37);
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.profile-container {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.profile-field input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 60%;
+}
+
+button {
+    color: #fff;
+    background-color: #f26f37;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover {
+    background-color: #e0592e;
+}
+
+button#logout {
+    background-color: #e0592e;
+    margin-top: 20px;
+}
+
+button#logout:hover {
+    background-color: #d3471c;
+}
+
+/* Align Save Name button inline with input field */
+.profile-field button {
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 1rem;
+}
