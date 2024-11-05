@@ -4,51 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <style>
-        body{
-            padding:30px;
-            background:linear-gradient(to right, #f8a074, #f26f37);
-        }
-        h1{
-            text-align:center;
-
-        }
-        button{
-            color:rgb(226, 73, 43);
-            background-color:#c9d6ff;
-            padding:5px;
-            border-radius:5px;
-            font-size:1rem;
-            font-weight:bold;
-            border:none;
-        }
-        button:hover{
-            text-decoration: underline;
-            color:blue;
-        }
-        button, div{
-            margin-left:15%;
-            font-size:20px;
-            padding:10px;
-        }
-        div{
-            font-weight:400;
-            color:rgb(12,11,11);
-
-        }
-        span{
-            font-weight:600;
-            font-size:22px;
-            color:black;
-        }
-    </style>
+    <link rel="stylesheet" href="homepage.css">
     <script type="module" src="./homepage.js"></script>
 </head>
 <body>
-    <h1>Welcome to the Homepage</h1>
-    <div>Name: <span id="loggedUserName"></span></div>
-    <!-- <div>Last Name: <span id="loggedUserLName"></span></div> -->
-    <div>Email: <span id="loggedUserEmail"></span></div>
+    <h1>Welcome to Your Profile</h1>
+    
+    <div class="profile-container">
+        <div class="profile-field">
+            Name: <input id="loggedUserName" type="text" placeholder="Enter your name">
+            <button id="saveName">Save Name</button>
+        </div>
+        <div class="profile-field">Email: <span id="loggedUserEmail"></span></div>
+
+        <h2>Additional Information</h2>
+        <div class="profile-field">Contact Number: <input id="contactNumber" type="text" placeholder="Enter contact number"></div>
+        <div class="profile-field">Date of Birth: <input id="dateOfBirth" type="date"></div>
+
+        <h2>Address</h2>
+        <div class="profile-field">Village: <input id="village" type="text" placeholder="Enter village"></div>
+        <div class="profile-field">City: <input id="city" type="text" placeholder="Enter city"></div>
+        <div class="profile-field">State: <input id="state" type="text" placeholder="Enter state"></div>
+        <div class="profile-field">Country: <input id="country" type="text" placeholder="Enter country"></div>
+        <div class="profile-field">Pincode: <input id="pincode" type="text" placeholder="Enter pincode"></div>
+
+        <h2>Educational Details</h2>
+        <div class="profile-field">Highest Qualification: <input id="qualification" type="text" placeholder="Enter qualification"></div>
+        <div class="profile-field">Institution: <input id="institution" type="text" placeholder="Enter institution"></div>
+
+        <button id="saveInfo">Save Information</button>
+    </div>
+
     <button id="logout">Logout</button>
 </body>
 </html>
