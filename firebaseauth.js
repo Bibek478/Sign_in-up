@@ -121,7 +121,7 @@ signIn.addEventListener('click', async (event) => {
 });
 
 // Reset Password Functionality
-const reset = document.getElementById('reset');
+const reset = document.getElementById('forgotPassword');
 reset.addEventListener("click", async (event) => {
     event.preventDefault();
     const email = document.getElementById('rEmail').value;
