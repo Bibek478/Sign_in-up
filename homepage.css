@@ -1,8 +1,7 @@
-/* homepage.css */
+/* General Body Styling */
 body {
     font-family: Arial, sans-serif;
     padding: 30px;
-    /* background: linear-gradient(to right, #f8a074, #f26f37); */
     background: #98b4c1;
     color: #333;
 }
@@ -17,6 +16,7 @@ h2 {
     color: #333;
 }
 
+/* Profile Container Styling */
 .profile-container {
     background: #fff;
     border-radius: 8px;
@@ -27,6 +27,7 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Profile Field Styling */
 .profile-field {
     display: flex;
     justify-content: space-between;
@@ -35,17 +36,25 @@ h2 {
     font-size: 1.1rem;
 }
 
-.profile-field input {
+/* Label and Input Field Styling */
+.profile-field span {
+    width: 40%;
+    font-size: 1.1rem;
+}
+
+.profile-field input,
+.profile-field .info-display {
+    width: 60%;
     padding: 8px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 60%;
 }
 
+/* Button Styling */
 button {
     color: #fff;
-    background-color: rgb(113, 108, 178);;
+    background-color: rgb(113, 108, 178);
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
@@ -60,18 +69,12 @@ button:hover {
     background-color: #021431;
 }
 
+/* Logout Button Styling */
 button#logout {
-    background-color: rgb(113, 108, 178);;
+    background-color: rgb(113, 108, 178);
     margin-top: 20px;
 }
 
 button#logout:hover {
     background-color: #021431;
-}
-
-/* Align Save Name button inline with input field */
-.profile-field button {
-    margin-left: 10px;
-    padding: 8px;
-    font-size: 1rem;
 }

@@ -5,36 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="homepage.css">
-    <script type="module" src="./homepage.js"></script>
+    <script type="module" src="homepage.js"></script>
 </head>
 <body>
     <h1><u>Welcome</u></h1>
     
     <div class="profile-container">
+        <!-- Name Field -->
         <div class="profile-field">
-            Name: <input id="loggedUserName" type="text" placeholder="Enter your name">
-            <button id="saveName">Save Name</button>
+            <span>Name:</span>
+            <input id="loggedUserName" type="text" placeholder="Enter your name">
         </div>
-        <div class="profile-field">Email: <span id="loggedUserEmail"></span></div>
+        
+        <!-- Email Field -->
+        <div class="profile-field">
+            <span>Email:</span>
+            <span id="loggedUserEmail" class="info-display"></span>
+        </div>
 
-        <!-- <h2>Additional Information</h2> -->
-        <div class="profile-field">Contact Number: <input id="contactNumber" type="text" placeholder="Enter contact number"></div>
-        <div class="profile-field">Date of Birth: <input id="dateOfBirth" type="date"></div>
+        <!-- Additional Information Fields -->
+        <div class="profile-field">
+            <span>Contact Number:</span>
+            <input id="contactNumber" type="text" placeholder="Enter contact number">
+        </div>
+        
+        <div class="profile-field">
+            <span>Date of Birth:</span>
+            <input id="dateOfBirth" type="date">
+        </div>
 
+        <!-- Address Section -->
         <h2>Address</h2>
-        <div class="profile-field">Village: <input id="village" type="text" placeholder="Enter village"></div>
-        <div class="profile-field">City: <input id="city" type="text" placeholder="Enter city"></div>
-        <div class="profile-field">State: <input id="state" type="text" placeholder="Enter state"></div>
-        <div class="profile-field">Country: <input id="country" type="text" placeholder="Enter country"></div>
-        <div class="profile-field">Pincode: <input id="pincode" type="text" placeholder="Enter pincode"></div>
+        <div class="profile-field">
+            <span>Village:</span>
+            <input id="village" type="text" placeholder="Enter village">
+        </div>
+        <div class="profile-field">
+            <span>City:</span>
+            <input id="city" type="text" placeholder="Enter city">
+        </div>
+        <div class="profile-field">
+            <span>State:</span>
+            <input id="state" type="text" placeholder="Enter state">
+        </div>
+        <div class="profile-field">
+            <span>Country:</span>
+            <input id="country" type="text" placeholder="Enter country">
+        </div>
+        <div class="profile-field">
+            <span>Pincode:</span>
+            <input id="pincode" type="text" placeholder="Enter pincode">
+        </div>
 
-        <!-- <h2>Educational Details</h2>
-        <div class="profile-field">Highest Qualification: <input id="qualification" type="text" placeholder="Enter qualification"></div>
-        <div class="profile-field">Institution: <input id="institution" type="text" placeholder="Enter institution"></div> -->
-
+        <!-- Save Button -->
         <button id="saveInfo">Save Information</button>
     </div>
 
+    <!-- Logout Button -->
     <button id="logout">Logout</button>
 </body>
 </html>
