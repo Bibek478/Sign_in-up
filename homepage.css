@@ -2,7 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     padding: 30px;
-    background: linear-gradient(to right, #f8a074, #f26f37);
+    /* background: linear-gradient(to right, #f8a074, #f26f37); */
+    background: #98b4c1;
     color: #333;
 }
 
@@ -44,7 +45,7 @@ h2 {
 
 button {
     color: #fff;
-    background-color: #f26f37;
+    background-color: rgb(113, 108, 178);;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 1rem;
@@ -56,16 +57,16 @@ button {
 }
 
 button:hover {
-    background-color: #e0592e;
+    background-color: #021431;
 }
 
 button#logout {
-    background-color: #e0592e;
+    background-color: rgb(113, 108, 178);;
     margin-top: 20px;
 }
 
 button#logout:hover {
-    background-color: #d3471c;
+    background-color: #021431;
 }
 
 /* Align Save Name button inline with input field */

@@ -51,7 +51,20 @@ signUp.addEventListener('click', async (event) => {
     event.preventDefault();
     const email = document.getElementById('rEmail').value;
     const password = document.getElementById('rPassword').value;
+    const confirmPassword = document.getElementById('rPassword').value; // Get the value of confirm password
     const name = document.getElementById('Name').value;
+
+    // Check if all fields are filled
+    if (!email || !password || !name || !confirmPassword) {
+        showMessage('Please fill all the fields', 'signUpMessage');
+        return; // Exit the function if fields are empty
+    }
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        showMessage('Passwords do not match', 'signUpMessage');
+        return; // Exit the function if passwords do not match
+    }
 
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -73,12 +86,20 @@ signUp.addEventListener('click', async (event) => {
     }
 });
 
+
+
 // Sign In Functionality
 const signIn = document.getElementById('submitSignIn');
 signIn.addEventListener('click', async (event) => {
     event.preventDefault();
     const email = document.getElementById('rEmail').value;
     const password = document.getElementById('rPassword').value;
+
+    // Check if email and password fields are filled
+    if (!email || !password) {
+        showMessage('Please enter your email and password', 'signInMessage');
+        return; // Exit the function if fields are empty
+    }
 
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
